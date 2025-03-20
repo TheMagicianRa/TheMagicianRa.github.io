@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños, Sobrino Querido</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide img {
+            width: 100%;
+            max-height: 400px;
+            min-width: 300px; /* Ancho mínimo de 300px */
+            object-fit: cover;
+            border-radius: 0.5rem;
+            border: 4px solid #e0e0e0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .dark .slide img {
+            border-color: #4a5568;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+        .dot.active {
+            background-color: white;
+            border-color: white;
+        }
+        @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+                margin: 0;
+                padding: 1rem;
+            }
+            .text-lg {
+                font-size: 1rem;
+            }
+            .text-3xl {
+                font-size: 2rem;
+            }
+            .mb-8 {
+                margin-bottom: 2rem;
+            }
+            .mb-6 {
+                margin-bottom: 1.5rem;
+            }
+            .slider-nav {
+                bottom: 10px;
+            }
+            .slide img {
+                max-height: 300px;
+                min-width: 200px; /* Ancho mínimo de 200px para pantallas pequeñas */
+            }
+        }
+        /* Estilos para el modo oscuro */
+        .dark {
+            background-color: #1a202c;
+            color: #f7fafc;
+        }
+        .dark .bg-white\/90 {
+            background-color: #2d3748;
+        }
+        .dark .text-blue-800 {
+            color: #90caf9;
+        }
+        .dark .text-purple-700 {
+            color: #ce93d8;
+        }
+        .dark .text-gray-700 {
+            color: #d1d5db;
+        }
+        .dark .text-gray-600 {
+            color: #e2e8f0;
+        }
+        .dark .text-gray-500 {
+            color: #a0aec0;
+        }
+        .dark .border-gray-200 {
+            border-color: #4a5568;
+        }
+        .dark .dot {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-color: rgba(0, 0, 0, 0.9);
+        }
+        .dark .dot.active {
+            background-color: #fff;
+            border-color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-50 to-purple-50 font-inter flex flex-col items-center justify-start min-h-screen py-10 dark">
+    <div class="container mx-auto px-4 py-8 bg-white/90 rounded-xl shadow-lg backdrop-blur-md max-w-2xl w-full border border-gray-200">
+        <h1 class="text-3xl font-semibold text-blue-800 text-center mb-6">Feliz Cumpleaños, Sobrino Querido</h1>
+        <section class="text-gray-700 text-lg text-center mb-8">
+            <p>
+                Aunque la distancia nos separe en este día tan especial, quiero que sepas que mi corazón está contigo.
+                Tu partida dejó un vacío, pero tu espíritu aventurero y tus ganas de superarte nos llenan de orgullo.
+            </p>
+            <p class="mt-4">
+                Que este nuevo año de vida te traiga muchas alegrías, éxitos y bendiciones. Que cada día te acerque más a tus sueños
+                y que nunca te falte el amor y el apoyo de tu familia. ¡Te queremos y te extrañamos mucho!
+            </p>
+        </section>
+        <section class="slider-container mb-8 rounded-xl overflow-hidden shadow-md border border-gray-200">
+            <div class="slider">
+                </div>
+            <div class="slider-nav">
+                </div>
+        </section>
+        <section class="text-gray-600 text-center mb-6">
+            <h2 class="text-2xl font-semibold text-purple-700 mb-4">Palabras de Aliento</h2>
+            <p class="mb-4">
+                Sabemos que no ha sido fácil estar lejos de casa, pero tu valentía y determinación son un ejemplo para todos nosotros.
+            </p>
+            <p class="mb-4">
+                Recuerda que siempre tendrás un hogar al que regresar y una familia que te ama incondicionalmente.
+                Sigue persiguiendo tus metas con pasión y nunca te rindas ante las adversidades.
+            </p>
+            <p>
+                ¡Feliz cumpleaños, campeón! Que la vida te sonría siempre.
+            </p>
+        </section>
+        <footer class="text-gray-500 text-sm text-right">
+            Con cariño tu tio, Rafael Bolivar.
+        </footer>
+    </div>
+    <script>
+        const sliderContainer = document.querySelector('.slider');
+        const sliderNav = document.querySelector('.slider-nav');
+        // imaenees a mostrar
+        const images = [
+            'familia0.jpg',
+            'familia1.jpg',
+            'sobrino0.jpg',
+            'familia2.jpg',
+            'sobrino1.jpg',
+            'familia3.jpg',
+            'sobrino2.jpg',
+            'familia4.jpg',
+            'sobrino3.jpg',
+            'familia5.jpg',
+            'sobrino4.jpg',
+            'familia6.jpg',
+            'sobrino5.jpg',
+            'familia7.jpg',
+            'sobrino6.jpg',
+            'familia8.jpg',
+            'sobrino7.jpg',
+            'familia9.jpg',
+            'sobrino8.jpg',
+            'sobrino9.jpg',
+            'sobrino10.jpg',
+            'sobrino11.jpg',
+            'sobrino12.jpg'
+        ];
+        function createSlides() {
+            images.forEach(image => {
+                const slide = document.createElement('div');
+                slide.classList.add('slide');
+                const img = document.createElement('img');
+                img.src = image;
+                img.alt = `Foto de ${image}`;
+                slide.appendChild(img);
+                sliderContainer.appendChild(slide);
+            });
+        }
+        function createNavigation() {
+            images.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (index === 0) {
+                    dot.classList.add('active');
+                }
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+                sliderNav.appendChild(dot);
+            });
+        }
+        let slideIndex = 0;
+        function goToSlide(index) {
+            slideIndex = index;
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            sliderContainer.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+        function autoSlide() {
+            slideIndex = (slideIndex + 1) % images.length;
+            goToSlide(slideIndex);
+        }
+        createSlides();
+        createNavigation();
+        let intervalId = setInterval(autoSlide, 5000);
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(intervalId);
+        });
+        sliderContainer.addEventListener('mouseleave', () => {
+            intervalId = setInterval(autoSlide, 5000);
+        });
+    </script>
+</body>
+</html>
